@@ -18,7 +18,7 @@ from uncertainties.unumpy import std_devs as st
 
 def ang_speed(x, y, lb):
     """
-    Obtains the angular frecuency (in deg/day) for a set of longitudes and times for a 
+    Obtains the angular frequency (in deg/day) for a set of longitudes and times for a 
     given sunspot.
     
     ----------
