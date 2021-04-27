@@ -33,6 +33,8 @@ def ang_speed(x, y, lb):
     -------
     pol[0]: float
         Slope of the fit (angular speed)
+    err[0]: float
+        Uncertainty of the slope
     """
     pol, err = np.polyfit(x, nv(y), deg=1, cov=True, w=1/st(y))
     err = np.sqrt(np.diag(err))
