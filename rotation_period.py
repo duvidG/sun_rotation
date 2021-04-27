@@ -89,7 +89,7 @@ def main():
     pte_30, err_30 = ang_speed(day_rel[0:6], long_err[0:6], r'A: $\phi$ = '+str(np.round(np.mean(lat[0:6]), 3)))
     
     # With uncertainties package a variable is defined as var = (value, err), and error is propagated in every 
-    # operation of this variable (it also works with arrays). nv() and st() fucntions return the value and the
+    # operation of this variable (it also works with arrays). nv() and st() functions return the value and the
     # uncertainty respectively.
     
     pte_30 = ufloat(pte_30, err_30)
@@ -105,9 +105,7 @@ def main():
     err = []
     pte = []
     c = 6
-    j = np.round(np.array([np.round(np.mean(lat[0:6]), 3), pte_30, s_30, p_30]), 2)
-    print(j)
-    
+   
     # Period for every equatorial sunspot
     print('\nEquatorial sunspots:')
     for i in range(4):
@@ -131,7 +129,7 @@ def main():
     p =  (s  * 365.25) / (s + 365.25)
     
     tab2 = np.array([x, nv(pte), st(pte), nv(s), st(s), nv(p), st(p)])
-    ptabla2 = tabla_latex(tab2, ['' for i in tab2[1]], ['$\phi$/deg','pte', 'err', '$\S$/day', '$\delta$ S','$\P$/day', '$\delta P$'], 3)
+    ptabla2 = tabla_latex(tab2, ['' for i in tab2[1]], ['$\phi$/deg', 'Slope/deg/day', 'Slope error/deg/day', '$\S$/day', '$\delta$ S','$\P$/day', '$\delta P$'], 3)
     print(ptabla2)
     
     # Mean synodic and sideral
@@ -150,9 +148,6 @@ def main():
     tab = np.array([day_rel, lat, long])
     ptabla = tabla_latex(tab, ['' for i in tab[1]], ['$t$/day', '$\phi$/deg', '$\lambda$/deg'], 3)
     display(ptabla)
- 
+
 main()
-
-
-
 
